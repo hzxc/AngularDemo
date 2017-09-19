@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <form #myForm="ngForm" [formGroup]="formModel" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>UserName:</label>
+        <input type="text" formControlName="userName" class="form-control" placeholder="UserName">
+      </div>
+      <div class="form-group">
+        <label>Phone:</label>
+        <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
+      </div>
+      <div formGroupName="passGroup">
+        <div class="form-group">
+          <label>Password:</label>
+          <input formControlName="password" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label>Comfirm Password:</label>
+          <input formControlName="comfirmPassword" type="password" class="form-control" placeholder="Comfirm Password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default">SignUp</button>
+    </form>
+  </div>
