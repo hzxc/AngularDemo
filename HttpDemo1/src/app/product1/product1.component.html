@@ -1,0 +1,8 @@
+<div>
+  商品信息
+</div>
+<ul>
+  <li *ngFor="let prod of products | async">
+    {{prod.title}}
+  </li>
+</ul>
