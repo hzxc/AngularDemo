@@ -1,7 +1,13 @@
-<h2>{{title}}</h2>
-<ul class="items">
-    <li *ngFor="let item of items" [class.selected]="item === selectedItem" (click)="onSelect(item)"> -->
-        <span>{{item.Title}}</span>
-    </li>
-</ul>
-<app-item-detail *ngIf="selectedItem" [item]="selectedItem"></app-item-detail>
+<div class="col-md-4">
+    <div class="thumbnail">
+        <div class="caption">
+            <h2>{{title}}</h2>
+            <ul class="items list-group">
+                <li *ngFor="let item of items" [class.selected]="item === selectedItem" (click)="onSelect(item)" class="list-group-item">
+                    <span>{{item.Title}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- <app-item-detail *ngIf="selectedItem" [item]="selectedItem"></app-item-detail> -->

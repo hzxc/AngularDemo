@@ -4,11 +4,16 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: "item/:id",
+    component: ItemDetailComponent
   },
   {
     path: 'home',
@@ -25,7 +30,8 @@ const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
-  }
+  },
+  
 ];
 
 @NgModule({

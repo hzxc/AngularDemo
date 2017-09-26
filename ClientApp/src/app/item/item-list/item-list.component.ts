@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Item, ItemService } from '../../service/item.service';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-list',
@@ -17,7 +18,7 @@ export class ItemListComponent implements OnInit {
   items: Item[];
   errorMessage: string;
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private router: Router) { }
 
   ngOnInit() {
     console.log("ItemListComponent instantiated with the following type: " + this.class);
@@ -71,6 +72,7 @@ export class ItemListComponent implements OnInit {
 
   onSelect(item: Item) {
     this.selectedItem = item;
-    console.log("item with Id " + this.selectedItem.Id + " has been selected.");
+    console.log('item with Id ' + this.selectedItem.Id + ' has been selected.');
+    this.router.navigate(['item', this.selectedItem.Id]);
   }
 }
